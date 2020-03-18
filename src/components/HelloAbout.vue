@@ -14,16 +14,16 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class About extends Vue {
-  @Prop() propMessge!: string;
+  @Prop() private propMessge!: string;
 
-  //initial data
-  msg = 123;
+  // initial data
+  private msg = 123;
 
   // use prop values for initial data
-  helloMsg = "Hello, " + this.propMessge;
+  private helloMsg = "Hello, " + this.propMessge;
 
   // lifecycle hook
-  mounted() {
+  private mounted() {
     this.greet();
   }
 
@@ -32,9 +32,9 @@ export default class About extends Vue {
     return "computed " + this.msg;
   }
 
-  //method
-  greet(): void {
-    console.log("greeting: ", this.msg);
+  // method
+  private greet(): void {
+    // console.log("greeting: ", this.msg);
   }
 }
 </script>
